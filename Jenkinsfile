@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t dnadna/dna-alpine:latest .'
+        sh 'docker build -t dnadna/myrepo-alpine:latest .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push dnadna/dna-alpine:latest'
+        sh 'docker push dnadna/myrepo-alpine:latest'
       }
     }
   }
