@@ -4,12 +4,12 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('seelan28-dockerhub')
+    DOCKERHUB_CREDENTIALS = credentials('dnadna-dockerhub')
   }
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t seelan28/seelan-alpine:latest .'
+        sh 'docker build -t dnadna/dna-alpine:latest .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push seelan28/seelan-alpine:latest'
+        sh 'docker push dnadna/dna-alpine:latest'
       }
     }
   }
