@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t dnadna/apache:latest .'
+        sh 'docker build -t dnadna/webserver:latest .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push dnadna/apache:latest'
+        sh 'docker push dnadna/webserver:latest'
       }
     }
   }
